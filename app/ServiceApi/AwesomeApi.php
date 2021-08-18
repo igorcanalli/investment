@@ -9,7 +9,7 @@ class AwesomeApi
     const API = 'https://economia.awesomeapi.com.br/last/';
 
     const CURRENCY = [
-        "USD-BRL", "EUR-BRL", "BTC-BRL",
+        "USD-BRL", "EUR-BRL", "BTC-USD", // MUDAR PARA BTC-BRL
     ];
 
     public static function getData()
@@ -19,6 +19,7 @@ class AwesomeApi
         $http = Http::get($url);
 
         if ($http->failed()) {
+            dd($url);
             abort(400, 'Erro de Conexão com API, tente novamente mais tarde.');
         }
 
