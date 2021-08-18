@@ -11,6 +11,7 @@ class InvestmentController extends Controller
 {
     public function __construct()
     {
+        //teste
         dump("fazendo investimento");
         if (!Currency::count()) {
             Currency::refreshApi();
